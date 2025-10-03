@@ -57,6 +57,7 @@ public class NeighborhoodLibrary {
                     break;
                 case 3:
                     AddNewBook(in);
+                    break;
                 case 4:
                     System.out.println("Goodbye!");
                     return;
@@ -68,7 +69,7 @@ public class NeighborhoodLibrary {
     }
     public static void ShowAvailableBooks(){
         System.out.println("List of available books:");
-        for (int i = 0; i < books.length; i++) {
+        for (int i = 0; i < numberOfBooks; i++) {
             if(!books[i].isCheckedOut()) {
                 System.out.println(books[i]);
             }
@@ -98,9 +99,9 @@ public class NeighborhoodLibrary {
     }
     public static void ShowCheckedOutBooks(){
         System.out.println("List of checked out books:");
-        for (int i = 0; i < books.length; i++) {
+        for (int i = 0; i < numberOfBooks; i++) {
             if(books[i].isCheckedOut()) {
-                System.out.println(books[i]);
+                System.out.println(books[i] + " is checked out to " + books[i].getCheckedOutTo());
             }
         }
     }
