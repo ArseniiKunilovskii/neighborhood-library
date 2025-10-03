@@ -56,7 +56,7 @@ public class NeighborhoodLibrary {
                     CheckInBook(in);
                     break;
                 case 3:
-
+                    AddNewBook(in);
                 case 4:
                     System.out.println("Goodbye!");
                     return;
