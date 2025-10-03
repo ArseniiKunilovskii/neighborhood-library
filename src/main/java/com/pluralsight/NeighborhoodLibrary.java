@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class NeighborhoodLibrary {
-    public static Book[] books = new Book[25];
+    public static Book[] books = new Book[30];
     public static int numberOfBooks = 25;
     public static void main(String[] args) {
 
@@ -40,7 +40,8 @@ public class NeighborhoodLibrary {
             System.out.println("What do you want to do?");
             System.out.println("1 - Show Available Books");
             System.out.println("2 - Show Checked Out Books");
-            System.out.println("3 - Exit");
+            System.out.println("3 - Add a New Book");
+            System.out.println("4 - Exit");
             System.out.println("Enter you command:");
 
             int command = in.nextInt();
@@ -55,6 +56,8 @@ public class NeighborhoodLibrary {
                     CheckInBook(in);
                     break;
                 case 3:
+
+                case 4:
                     System.out.println("Goodbye!");
                     return;
                 default:
@@ -121,4 +124,18 @@ public class NeighborhoodLibrary {
             }
         }
     }
+    public static void AddNewBook(Scanner in){
+        if(numberOfBooks<books.length){
+            System.out.println("Please enter isbn:");
+            String isbn = in.nextLine();
+            System.out.println("Please enter title:");
+            String title = in.nextLine();
+            books[numberOfBooks] = new Book(numberOfBooks+1, isbn, title, false, "");
+            System.out.println(title + " - has been added to the library");
+        }
+        else {
+            System.out.println("Library is full");
+        }
+    }
+
 }
