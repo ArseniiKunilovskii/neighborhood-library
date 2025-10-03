@@ -132,6 +132,7 @@ public class NeighborhoodLibrary {
             String title = in.nextLine();
             books[numberOfBooks] = new Book(numberOfBooks+1, isbn, title, false, "");
             System.out.println(title + " - has been added to the library");
+            numberOfBooks++;
         }
         else {
             System.out.println("Library is full");
